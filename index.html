@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celso C. Ferrer Construction Corp</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #00509e;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #ffcc00;
+      color: #003366;
+      padding: 12px 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #e6b800;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #003366;
+      border-bottom: 3px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    /* Services */
+
+    .services {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .service-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+      text-align: center;
+    }
+
+    .service-item h3 {
+      margin-bottom: 12px;
+      color: #003366;
+    }
+
+    .service-item p {
+      color: #555;
+    }
+
+    /* Projects */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .project-content h4 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .project-content p {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    /* About */
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Contact */
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #003366;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #003366;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #00509e;
+    }
+
+    /* Footer */
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+      .hero {
+        height: 300px;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Celso C. Ferrer Construction Corp</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Building with Strength, Vision, and Integrity</h2>
+    <p>Your trusted partner in construction excellence.</p>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service-item">
+        <h3>Residential Construction</h3>
+        <p>From custom homes to multi-family units, we deliver quality residential projects on time and budget.</p>
+      </div>
+      <div class="service-item">
+        <h3>Commercial Buildings</h3>
+        <p>Office buildings, retail spaces, and more – constructed with precision and professionalism.</p>
+      </div>
+      <div class="service-item">
+        <h3>Renovations & Remodeling</h3>
+        <p>Upgrade and modernize your existing structures with our expert remodeling services.</p>
+      </div>
+      <div class="service-item">
+        <h3>Roadwork & Infrastructure</h3>
+        <p>Building reliable roads and infrastructure to support growing communities and businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Recent Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Modern Residential Building" />
+        <div class="project-content">
+          <h4>Modern Residential Building</h4>
+          <p>Custom 5-bedroom home in downtown area completed in 2024.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1486308510493-cb9b3e8356af?auto=format&fit=crop&w=600&q=80" alt="Commercial Office Space" />
+        <div class="project-content">
+          <h4>Commercial Office Space</h4>
+          <p>State-of-the-art office complex for a tech startup.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Road Construction" />
+        <div class="project-content">
+          <h4>Highway Expansion</h4>
+          <p>Expansion of a key highway to ease city traffic congestion.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Home Renovation" />
+        <div class="project-content">
+          <h4>Home Renovation</h4>
+          <p>Complete kitchen and living room remodel for a suburban home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <p><strong>Celso C. Ferrer Construction Corp</strong> has been delivering quality construction services for over 15 years. Our mission is to build lasting structures with integrity, safety, and sustainability in mind.</p>
+      <p>We pride ourselves on transparent communication, expert craftsmanship, and on-time delivery. Our team of certified professionals ensures your project is completed to the highest standards.</p>
+      <p>Committed to innovation and customer satisfaction, we strive to exceed expectations on every project.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1 555 123 4567" />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Celso C. Ferrer Construction Corp. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Thank you for contacting Celso C. Ferrer Construction Corp. We will get back to you shortly!');
+      event.target.reset();
+    }
+  </script>
+
+</body>
+</html>
